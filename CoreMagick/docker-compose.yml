@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  coremagick:
+    image: allumina/coremagick:0.0.1
+    container_name: coremagick
+    hostname: coremagick
+    networks:
+      - coremagick
+    ports:
+      - 8081:80
+      - 8441:443
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+networks:
+  coremagick:
