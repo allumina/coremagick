@@ -10,11 +10,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a3fb45ff-f33f-4070-af3f-324de6e2e952" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoreMagick/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoreMagick/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CoreMagick/Controllers/WeatherForecastController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CoreMagick/Controllers/ImagesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoreMagick/Controllers/ImagesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CoreMagick/Controllers/ImagesController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CoreMagick/CoreMagick.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CoreMagick/CoreMagick.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CoreMagick/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/CoreMagick/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CoreMagick/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CoreMagick/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CoreMagick/WeatherForecast.cs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +41,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.CoreMagick">
+  <component name="RunManager" selected="Docker.CoreMagick/Dockerfile">
     <configuration name="CoreMagick" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/CoreMagick/CoreMagick.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
@@ -74,7 +72,7 @@
         <option name="Build" />
       </method>
     </configuration>
-    <configuration name="CoreMagick/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+    <configuration name="CoreMagick/Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
           <option name="imageTag" value="allumina/coremagick" />
@@ -90,11 +88,6 @@
       <item itemvalue=".NET Launch Settings Profile.CoreMagick: IIS Express" />
       <item itemvalue="Docker.CoreMagick/Dockerfile" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Docker.CoreMagick/Dockerfile" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -105,7 +98,8 @@
       <option name="presentableId" value="Default" />
       <updated>1635931023580</updated>
       <workItem from="1635931029812" duration="3844000" />
-      <workItem from="1636103742208" duration="7135000" />
+      <workItem from="1636103742208" duration="9172000" />
+      <workItem from="1636119334078" duration="6836000" />
     </task>
     <servers />
   </component>
@@ -129,5 +123,37 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CoreMagick/Controllers/ImagesController.cs</url>
+          <line>43</line>
+          <properties documentPath="$PROJECT_DIR$/CoreMagick/Controllers/ImagesController.cs" initialLine="42" containingFunctionPresentation="method 'Encode'">
+            <startOffsets>
+              <option value="1320" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1355" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/CoreMagick/Controllers/ImagesController.cs</url>
+          <line>56</line>
+          <properties documentPath="$PROJECT_DIR$/CoreMagick/Controllers/ImagesController.cs" initialLine="53" containingFunctionPresentation="method 'Encode'">
+            <startOffsets>
+              <option value="1932" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1933" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

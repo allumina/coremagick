@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -13,9 +14,10 @@ namespace CoreMagick.Controllers
     [Route("api/v2/images")]
     public class ImagesController : ControllerBase
     {
-        private const string CommandMagick = "/usr/local/bin/magick";
-        private const string CommandArgsIdentify = "identify -format \"%m\"";
-        private const string CommandArgsResize = "convert -resize";
+        private const string CommandMagickIdentify = "/usr/bin/identify";
+        private const string CommandMagickConvert = "/usr/bin/convert";
+        private const string CommandArgsIdentify = "-format \"%m\"";
+        private const string CommandArgsResize = "-resize";
         
         private readonly ILogger<ImagesController> _logger;
 
@@ -40,10 +42,13 @@ namespace CoreMagick.Controllers
             try
             {
                 var path = GenerateTemporaryPath();
+                source = WebUtility.UrlDecode(source);
+                _logger.LogInformation($"Retrieving {source}");
                 await RetrieveFile(source, path);
                 var mime = Identify(path);
                 if (resize && width > 0)
                 {
+                    _logger.LogInformation($"Resizing (width {width}): {source}");
                     Resize(path, width);
                 }
                 var output = Base64Encode(path);
@@ -56,11 +61,19 @@ namespace CoreMagick.Controllers
             }
         }
         
+        [HttpGet("path")]
+        public IActionResult GeneratePath()
+        {
+            var path = GenerateTemporaryPath();
+            return Ok(path);
+        }
+        
         #region Private methods
         private async Task RetrieveFile(string url, string path)
         {
             using var client = new HttpClient();
             using var result = await client.GetAsync(url);
+            _logger.LogInformation($"Status {result.StatusCode.ToString()}");
             if (result.IsSuccessStatusCode)
             {
                 var binary = await result.Content.ReadAsByteArrayAsync(); 
@@ -84,7 +97,7 @@ namespace CoreMagick.Controllers
 
         private string Identify(string path)
         {
-            string output = RunCommand($"{CommandMagick}",  $"{CommandArgsIdentify} {path}");
+            string output = RunCommand($"{CommandMagickIdentify}",  $"{CommandArgsIdentify} {path}");
             switch (output.Trim().ToLower())
             {
                 case "jpg":
@@ -102,7 +115,7 @@ namespace CoreMagick.Controllers
         
         private static void Resize(string path, ushort width)
         {
-            RunCommand($"{CommandMagick}",  $"{CommandArgsResize} {width}x {path} {path}");
+            RunCommand($"{CommandMagickConvert}",  $"{CommandArgsResize} {width}x {path} {path}");
         }
         
         private static string RunCommand(string command, string args)
