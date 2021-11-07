@@ -10,9 +10,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a3fb45ff-f33f-4070-af3f-324de6e2e952" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CoreMagick/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CoreMagick/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CoreMagick/Controllers/ImagesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CoreMagick/Controllers/ImagesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CoreMagick/CoreMagick.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CoreMagick/CoreMagick.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CoreMagick/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/CoreMagick/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +96,7 @@
       <updated>1635931023580</updated>
       <workItem from="1635931029812" duration="3844000" />
       <workItem from="1636103742208" duration="9172000" />
-      <workItem from="1636119334078" duration="6836000" />
+      <workItem from="1636119334078" duration="8033000" />
     </task>
     <servers />
   </component>
