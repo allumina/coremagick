@@ -1,1 +1,1 @@
-docker build -t allumina/coremagick:0.0.1 -f ./CoreMagick/Dockerfile . --no-cache
+docker build -t allumina/coremagick:0.0.2 -f ./CoreMagick/Dockerfile . --no-cache
